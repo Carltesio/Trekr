@@ -11,7 +11,7 @@ class Locations: ObservableObject {
     let places: [Location]
     
     var primary: Location {
-        places[5]
+        places[6]
     }
     
     init() {

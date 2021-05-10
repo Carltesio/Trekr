@@ -14,6 +14,14 @@ struct TrekrApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
+                
+                NavigationView   {
+                    WorldView()
+                }
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Locations")
+                }
                 NavigationView{
                     ContentView(location: locations.primary)
                 }
@@ -22,12 +30,12 @@ struct TrekrApp: App {
                     Text("Discover")
                 }
                 
-                NavigationView   {
-                    WorldView()
+                NavigationView{
+                    TipsView()
                 }
                 .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("Locations")
+                    Image(systemName: "list.bullet")
+                    Text("Tips")
                 }
             }
             .environmentObject(locations)
